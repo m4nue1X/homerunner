@@ -4,5 +4,7 @@ add_executable(hrnode
 )
 
 target_link_libraries(hrnode
-  ${HR_LIBRARIES}
+  dl
+  pthread
+  homerunner
 )

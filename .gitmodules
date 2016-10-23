@@ -1,0 +1,6 @@
+[submodule "hr-lib/test-virtual-network-layers-cpp"]
+	path = hr-lib/test-virtual-network-layers-cpp
+	url = https://github.com/madMAx43v3r/test-virtual-network-layers-cpp.git
+[submodule "hr-lib/lib/virtual-network-layers-cpp"]
+	path = hr-lib/lib/virtual-network-layers-cpp
+	url = https://github.com/madMAx43v3r/virtual-network-layers-cpp.git

@@ -14,16 +14,10 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${HR_ROOT}/installs/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${HR_ROOT}/installs/bin)
 
 ## VNL / VNI
-if(DEFINED ENV{VNL_ROOT} AND IS_DIRECTORY "$ENV{VNL_ROOT}")
-  set(VNL_ROOT "$ENV{VNL_ROOT}")
-else(DEFINED ENV{VNL_ROOT} AND IS_DIRECTORY "$ENV{VNL_ROOT}")
-  message(FATAL_ERROR "VNL_ROOT environment variable not defined or not pointing to a directory")
-endif(DEFINED ENV{VNL_ROOT} AND IS_DIRECTORY "$ENV{VNL_ROOT}")
-
-list(APPEND VNL_INTERFACE_DIRS "${VNL_ROOT}/interface")
-list(APPEND VNL_INCLUDE_DIRS "${VNL_ROOT}/include" "${VNL_ROOT}/generated/include")
-list(APPEND VNL_LIB_DIRS "${HR_ROOT}/installs/lib")
-list(APPEND VNL_LIBS "vnl")
+set(VNL_DIR "${HR_ROOT}/hr-lib/lib/virtual-network-layers-cpp")
+list(APPEND VNL_INCLUDE_DIRS "${VNL_DIR}/include")
+list(APPEND VNL_LIBRARY_DIRS "${HR_ROOT}/installs/lib")
+list(APPEND VNL_LIBRARIES "vnl")
 
 if(DEFINED ENV{VNICPPCODEGEN} AND EXISTS "$ENV{VNICPPCODEGEN}")
   set(VNICPPCODEGEN "$ENV{VNICPPCODEGEN}")
@@ -34,8 +28,8 @@ endif(DEFINED ENV{VNICPPCODEGEN} AND EXISTS "$ENV{VNICPPCODEGEN}")
 ## libhr
 set(LIBHR_DIR "${HR_ROOT}/hr-lib")
 list(APPEND LIBHR_INCLUDE_DIRS "${LIBHR_DIR}/include" "${LIBHR_DIR}/generated/include")
-list(APPEND LIBHR_LIB_DIRS "${HR_ROOT}/installs/lib")
-list(APPEND LIBHR_LIBS "hr")
+list(APPEND LIBHR_LIBRARY_DIRS "${HR_ROOT}/installs/lib")
+list(APPEND LIBHR_LIBRARIES "homerunner")
 
 ## Build
 include_directories(
@@ -44,6 +38,6 @@ include_directories(
 )
 
 link_directories(
-    ${VNL_LIB_DIRS}
-    ${LIBHR_LIB_DIRS}
+    ${VNL_LIBRARY_DIRS}
+    ${LIBHR_LIBRARY_DIRS}
 )

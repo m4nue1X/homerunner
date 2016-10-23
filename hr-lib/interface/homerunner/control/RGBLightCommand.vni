@@ -7,4 +7,5 @@ class RGBLightCommand extends SwitchCommand {
 	double green;
 	double blue;
 	double fadedur;
+
 }

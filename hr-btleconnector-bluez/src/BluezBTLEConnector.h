@@ -17,6 +17,12 @@ class BluezBTLEConnector: public BTLEConnectorBase {
 public:
 	BluezBTLEConnector();
 	virtual ~BluezBTLEConnector();
+
+protected:
+	void main();
+
+	void emit();
+
 };
 
 } /* namespace connect */
