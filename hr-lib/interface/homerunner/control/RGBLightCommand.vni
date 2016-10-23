@@ -1,0 +1,10 @@
+package homerunner.control;
+
+import homerunner.control.SwitchCommand;
+
+class RGBLightCommand extends SwitchCommand {
+	double red;
+	double green;
+	double blue;
+	double fadedur;
+}

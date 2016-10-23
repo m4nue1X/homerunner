@@ -1,0 +1,5 @@
+package homerunner.connect;
+
+object JeeLinkConnector {
+	// publishing only module
+}

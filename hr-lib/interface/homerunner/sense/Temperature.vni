@@ -1,0 +1,5 @@
+package homerunner.sense;
+
+class Temperature {
+	double value;
+}

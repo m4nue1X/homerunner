@@ -1,0 +1,8 @@
+package homerunner.control;
+
+import homerunner.control.SwitchCommand;
+
+class DimmableLightCommand extends SwitchCommand {
+	double value;
+	double fadedur;
+}
