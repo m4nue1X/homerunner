@@ -1,5 +1,7 @@
 package homerunner.sense;
 
-class Temperature {
+import homerunner.Notification;
+
+class Temperature extends Notification {
 	double value;
 }

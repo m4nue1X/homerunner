@@ -11,7 +11,7 @@
 namespace homerunner {
 namespace connect {
 
-BluezBTLEConnector::BluezBTLEConnector() : BTLEConnectorBase("BTLEConnector", "BluezBTLEConnector") {
+BluezBTLEConnector::BluezBTLEConnector() : BTLEConnectorBase("homerunner", "BluezBTLEConnector") {
 	// TODO Auto-generated constructor stub
 }
 

@@ -1,5 +1,7 @@
 package homerunner.sense;
 
-class ButtonState {
+import homerunner.Notification;
+
+class ButtonState extends Notification {
 	bool pressed;
 }

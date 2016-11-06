@@ -1,0 +1,7 @@
+package homerunner;
+
+import homerunner.Address;
+
+class Notification {
+	Address src;
+}

@@ -4,8 +4,8 @@ cmake_minimum_required(VERSION 2.8.3)
 #set(CMAKE_VERBOSE_MAKEFILE on)
 set(CMAKE_BUILD_TYPE Debug)
 
-set(CMAKE_CXX_FLAGS "-fvisibility=hidden -std=c++11 ${CMAKE_CXX_FLAGS}")
-set(CMAKE_C_FLAGS "-fvisibility=hidden ${CMAKE_C_FLAGS}")
+set(CMAKE_CXX_FLAGS "-std=c++11 -g -fvisibility=hidden ${CMAKE_CXX_FLAGS}")
+set(CMAKE_C_FLAGS "-g -fvisibility=hidden ${CMAKE_C_FLAGS}")
 
 ## HomeRunner
 set(HR_ROOT ${CMAKE_CURRENT_LIST_DIR})

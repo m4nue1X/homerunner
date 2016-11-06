@@ -1,0 +1,5 @@
+package homerunner;
+
+struct Address {
+	long addr;
+}

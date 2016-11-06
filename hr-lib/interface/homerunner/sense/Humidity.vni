@@ -1,5 +1,7 @@
 package homerunner.sense;
 
-class Humidity {
+import homerunner.Notification;
+
+class Humidity extends Notification {
 	double value;
 }

@@ -1,43 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>hr-lib-Debug@hr-lib</name>
+	<name>hr-lib</name>
 	<comment></comment>
-	<projects></projects>
+	<projects>
+	</projects>
 	<buildSpec>
 		<buildCommand>
 			<name>org.eclipse.cdt.make.core.makeBuilder</name>
 			<triggers>clean,full,incremental,</triggers>
 			<arguments>
 				<dictionary>
-					<key>org.eclipse.cdt.make.core.cleanBuildTarget</key>
-					<value>clean</value>
-				</dictionary>
-				<dictionary>
-					<key>org.eclipse.cdt.make.core.enableCleanBuild</key>
-					<value>true</value>
+					<key>org.eclipse.cdt.core.errorOutputParser</key>
+					<value>org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser;</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.append_environment</key>
 					<value>true</value>
 				</dictionary>
 				<dictionary>
-					<key>org.eclipse.cdt.make.core.stopOnError</key>
-					<value>true</value>
-				</dictionary>
-				<dictionary>
-					<key>org.eclipse.cdt.make.core.enabledIncrementalBuild</key>
-					<value>true</value>
-				</dictionary>
-				<dictionary>
-					<key>org.eclipse.cdt.make.core.build.command</key>
-					<value>/usr/bin/make</value>
-				</dictionary>
-				<dictionary>
-					<key>org.eclipse.cdt.make.core.contents</key>
-					<value>org.eclipse.cdt.make.core.activeConfigSettings</value>
-				</dictionary>
-				<dictionary>
-					<key>org.eclipse.cdt.make.core.build.target.inc</key>
+					<key>org.eclipse.cdt.make.core.autoBuildTarget</key>
 					<value>all</value>
 				</dictionary>
 				<dictionary>
@@ -45,35 +26,23 @@
 					<value>-j8</value>
 				</dictionary>
 				<dictionary>
-					<key>org.eclipse.cdt.make.core.buildLocation</key>
-					<value>/home/manuel/Development/Software/workspace/homerunner/hr-lib</value>
+					<key>org.eclipse.cdt.make.core.build.command</key>
+					<value>/usr/bin/make</value>
 				</dictionary>
 				<dictionary>
-					<key>org.eclipse.cdt.make.core.useDefaultBuildCmd</key>
-					<value>false</value>
-				</dictionary>
-				<dictionary>
-					<key>org.eclipse.cdt.make.core.environment</key>
-					<value>VERBOSE=1|CMAKE_NO_VERBOSE=1|</value>
-				</dictionary>
-				<dictionary>
-					<key>org.eclipse.cdt.make.core.enableFullBuild</key>
-					<value>true</value>
+					<key>org.eclipse.cdt.make.core.build.location</key>
+					<value>/home/manuel/Development/Software/homerunner/hr-lib</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.build.target.auto</key>
 					<value>all</value>
 				</dictionary>
 				<dictionary>
-					<key>org.eclipse.cdt.make.core.enableAutoBuild</key>
-					<value>false</value>
-				</dictionary>
-				<dictionary>
 					<key>org.eclipse.cdt.make.core.build.target.clean</key>
 					<value>clean</value>
 				</dictionary>
 				<dictionary>
-					<key>org.eclipse.cdt.make.core.fullBuildTarget</key>
+					<key>org.eclipse.cdt.make.core.build.target.inc</key>
 					<value>all</value>
 				</dictionary>
 				<dictionary>
@@ -81,22 +50,55 @@
 					<value></value>
 				</dictionary>
 				<dictionary>
-					<key>org.eclipse.cdt.make.core.build.location</key>
-					<value>/home/manuel/Development/Software/workspace/homerunner/hr-lib</value>
+					<key>org.eclipse.cdt.make.core.buildLocation</key>
+					<value>/home/manuel/Development/Software/homerunner/hr-lib</value>
 				</dictionary>
 				<dictionary>
-					<key>org.eclipse.cdt.make.core.autoBuildTarget</key>
+					<key>org.eclipse.cdt.make.core.cleanBuildTarget</key>
+					<value>clean</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.contents</key>
+					<value>org.eclipse.cdt.make.core.activeConfigSettings</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableAutoBuild</key>
+					<value>false</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableCleanBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableFullBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enabledIncrementalBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.environment</key>
+					<value>VERBOSE=1|CMAKE_NO_VERBOSE=1|</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.fullBuildTarget</key>
 					<value>all</value>
 				</dictionary>
 				<dictionary>
-					<key>org.eclipse.cdt.core.errorOutputParser</key>
-					<value>org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser;</value>
+					<key>org.eclipse.cdt.make.core.stopOnError</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.useDefaultBuildCmd</key>
+					<value>false</value>
 				</dictionary>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
 			<name>org.eclipse.cdt.make.core.ScannerConfigBuilder</name>
-			<arguments/>
+			<arguments>
+			</arguments>
 		</buildCommand>
 	</buildSpec>
 	<natures>
@@ -106,6 +108,11 @@
 		<nature>org.eclipse.cdt.core.cnature</nature>
 	</natures>
 	<linkedResources>
+		<link>
+			<name>[Source directory]</name>
+			<type>2</type>
+			<location>/home/manuel/Development/Software/homerunner/hr-lib/src</location>
+		</link>
 		<link>
 			<name>[Subprojects]</name>
 			<type>2</type>
@@ -117,259 +124,44 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[lib] hr</name>
+			<name>[Subprojects]/hr-lib</name>
+			<type>2</type>
+			<location>/home/manuel/Development/Software/homerunner/hr-lib/src</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] homerunner/</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[lib] hr/</name>
+			<name>[Targets]/[lib] homerunner/CMake Rules</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[lib] hr/Source Files</name>
+			<name>[Targets]/[lib] homerunner/Header Files</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[lib] hr/Source Files/TcpServerSupport.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/TcpServerSupport.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/SpyToolSupport.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/SpyToolSupport.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/request_type_t.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/request_type_t.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/RecorderSupport.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/RecorderSupport.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Instance.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/Instance.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/PlayerStatus.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/info/PlayerStatus.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Field.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/info/Field.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Object.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/info/Object.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Method.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/info/Method.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Parameter.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/info/Parameter.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Class.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/info/Class.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Integer.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/Integer.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/RecordValue.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/RecordValue.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/TcpUplinkSupport.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/TcpUplinkSupport.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/UplinkSupport.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/UplinkSupport.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Announce.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/Announce.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Header.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/Header.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Value.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/Value.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Real.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/Real.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/PlayerSupport.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/PlayerSupport.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/UdpServerSupport.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/UdpServerSupport.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/LogMsg.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/LogMsg.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/RecordHeader.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/RecordHeader.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Topic.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/Topic.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/ProcessSupport.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/ProcessSupport.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/ObjectSupport.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/ObjectSupport.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Bool.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/Bool.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Exit.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/Exit.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/TcpClientSupport.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/TcpClientSupport.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Request.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/Request.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Shutdown.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/vnl/Shutdown.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/RGBLightSupport.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/homerunner/act/RGBLightSupport.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/DimmableLightSupport.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/homerunner/act/DimmableLightSupport.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/BTLEConnectorSupport.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/homerunner/connect/BTLEConnectorSupport.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/IguanaUSBIRConnectorSupport.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/homerunner/connect/IguanaUSBIRConnectorSupport.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/JeeLinkConnectorSupport.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/homerunner/connect/JeeLinkConnectorSupport.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/SwitchState.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/homerunner/sense/SwitchState.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/ButtonState.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/homerunner/sense/ButtonState.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Temperature.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/homerunner/sense/Temperature.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/Humidity.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/homerunner/sense/Humidity.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/SwitchCommand.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/homerunner/control/SwitchCommand.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/DimmableLightCommand.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/homerunner/control/DimmableLightCommand.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/RGBLightCommand.cxx</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/generated/src/homerunner/control/RGBLightCommand.cxx</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Source Files/main.cpp</name>
-			<type>1</type>
-			<location>/home/manuel/Development/Software/workspace/homerunner/hr-lib/src/main.cpp</location>
-		</link>
-		<link>
-			<name>[Targets]/[lib] hr/Header Files</name>
+			<name>[Targets]/[lib] homerunner/Object Files</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[lib] hr/CMake Rules</name>
+			<name>[Targets]/[lib] homerunner/Resources</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[lib] hr/Resources</name>
+			<name>[Targets]/[lib] homerunner/Source Files</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[lib] hr/Object Files</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
+			<name>[Targets]/[lib] homerunner/Source Files/main.cpp</name>
+			<type>1</type>
+			<location>/home/manuel/Development/Software/homerunner/hr-lib/src/main.cpp</location>
 		</link>
 	</linkedResources>
 </projectDescription>

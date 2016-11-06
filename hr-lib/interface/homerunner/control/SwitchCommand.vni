@@ -1,5 +1,7 @@
 package homerunner.control;
 
-class SwitchCommand {
+import homerunner.Notification;
+
+class SwitchCommand extends Notification {
 	bool on;
 }

@@ -1,5 +1,7 @@
 package homerunner.sense;
 
-class SwitchState {
+import homerunner.Notification;
+
+class SwitchState extends Notification {
 	bool on;
 }
