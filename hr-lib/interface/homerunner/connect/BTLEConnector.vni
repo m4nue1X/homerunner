@@ -1,5 +1,5 @@
 package homerunner.connect;
 
 object BTLEConnector {
-	// TODO BlueTooth low energy service API
+	String device_address = "";
 }

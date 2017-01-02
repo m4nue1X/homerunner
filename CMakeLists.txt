@@ -4,4 +4,5 @@ cmake_minimum_required(VERSION 2.8.3)
 
 add_subdirectory(hr-lib)
 add_subdirectory(hr-node)
-add_subdirectory(hr-btleconnector-bluez)
+add_subdirectory(hr-engine-ecmascript)
+#add_subdirectory(hr-btleconnector-bluez)

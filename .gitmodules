@@ -4,3 +4,6 @@
 [submodule "hr-lib/lib/virtual-network-layers-cpp"]
 	path = hr-lib/lib/virtual-network-layers-cpp
 	url = https://github.com/madMAx43v3r/virtual-network-layers-cpp.git
+[submodule "hr-engine-ecmascript/lib/duktape"]
+	path = hr-engine-ecmascript/lib/duktape
+	url = https://github.com/svaarala/duktape.git

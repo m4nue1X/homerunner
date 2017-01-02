@@ -1,0 +1,6 @@
+package homerunner;
+
+object Node {
+	String modules = "";
+	String instances = "";
+}
