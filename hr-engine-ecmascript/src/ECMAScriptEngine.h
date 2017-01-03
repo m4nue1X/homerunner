@@ -5,8 +5,8 @@
  *      Author: manuel
  */
 
-#ifndef ECMASCRIPTENGINE_H_
-#define ECMASCRIPTENGINE_H_
+#ifndef HR_ECMASCRIPTENGINE_H_
+#define HR_ECMASCRIPTENGINE_H_
 
 #include <vnl/String.h>
 #include <homerunner/EngineSupport.hxx>
@@ -33,4 +33,4 @@ public:
 
 } /* namespace homerunner */
 
-#endif /* ECMASCRIPTENGINE_H_ */
+#endif /* HR_ECMASCRIPTENGINE_H_ */

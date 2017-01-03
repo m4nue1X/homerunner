@@ -7,3 +7,6 @@
 [submodule "hr-engine-ecmascript/lib/duktape"]
 	path = hr-engine-ecmascript/lib/duktape
 	url = https://github.com/svaarala/duktape.git
+[submodule "hr-actor-tplwifi/lib/rapidjson"]
+	path = hr-actor-tplwifi/lib/rapidjson
+	url = https://github.com/miloyip/rapidjson.git

@@ -1,0 +1,38 @@
+
+Protocol
+--------
+
+HS105
+from app (udp broadcast): {"system":{"get_sysinfo":null},"emeter":{"get_realtime":null}}
+from dev (udp): {"system":{"get_sysinfo":{"sw_ver":"1.0.6 Build 160722 Rel.081616","hw_ver":"1.0","type":"IOT.SMARTPLUGSWITCH","model":"HS105(US)","mac":"50:C7:BF:29:B9:67","dev_name":"Smart Wi-Fi Plug Mini","alias":"Livingroom","relay_state":0,"on_time":0,"active_mode":"none","feature":"TIM","updating":0,"icon_hash":"","rssi":-56,"led_off":0,"longitude_i":-1220135,"latitude_i":373704,"hwId":"E5D7E6089B060EF662783C23AE110522","fwId":"00000000000000000000000000000000","deviceId":"800677DE698261F8197A00077894BDA817FEFA43","oemId":"003E098AF0D44D4BAB796B3F6A7A830E","err_code":0}},"emeter":{"err_code":-1,"err_msg":"module not support"}}
+
+when app is opened:
+to dev: {"schedule":{"get_next_action":null}}
+from dev: {"schedule":{"get_next_action":{"type":-1,"err_code":0}}}
+
+when plug is siwtched on:
+to dev: {"system":{"set_relay_state":{"state":1}}}
+from dev: {"system":{"set_relay_state":{"err_code":0}}}
+
+when device is opened:
+to dev: {"schedule":{"get_next_action":null,"get_monthstat":{"year":2017},"get_daystat":{"month":1,"year":2017}},"system":{"get_sysinfo":null}}
+from dev: {"schedule":{"get_next_action":{"type":-1,"err_code":0},"get_monthstat":{"month_list":[{"year":2017,"month":1,"time":39}],"err_code":0},"get_daystat":{"day_list":[{"year":2017,"month":1,"day":2,"time":39}],"err_code":0}},"system":{"get_sysinfo":{"sw_ver":"1.0.6 Build 160722 Rel.081616","hw_ver":"1.0","type":"IOT.SMARTPLUGSWITCH","model":"HS105(US)","mac":"50:C7:BF:29:B9:67","dev_name":"Smart Wi-Fi Plug Mini","alias":"Livingroom","relay_state":1,"on_time":948,"active_mode":"none","feature":"TIM","updating":0,"icon_hash":"","rssi":-58,"led_off":0,"longitude_i":-1220135,"latitude_i":373704,"hwId":"E5D7E6089B060EF662783C23AE110522","fwId":"00000000000000000000000000000000","deviceId":"800677DE698261F8197A00077894BDA817FEFA43","oemId":"003E098AF0D44D4BAB796B3F6A7A830E","err_code":0}}}
+to dev: {"time":{"get_time":null}}
+from dev: {"time":{"get_time":{"year":2017,"month":1,"mday":2,"hour":22,"min":41,"sec":2,"err_code":0}}}
+
+LB110
+from app (udp broadcast): {"system":{"get_sysinfo":null},"emeter":{"get_realtime":null}}
+from dev (udp): {"system":{"get_sysinfo":{"sw_ver":"1.1.0 Build 160630 Rel.085319","hw_ver":"1.0","model":"LB110(US)","description":"Smart Wi-Fi LED Bulb with Dimmable Light","alias":"Bedroom","mic_type":"IOT.SMARTBULB","dev_state":"normal","mic_mac":"50C7BF1AC3B7","deviceId":"80124DB4A5E344F1689DB4990FB8D3D217ED9838","oemId":"1C3EE8B563FB24A74D815CE80582E03E","hwId":"111E35908497A05512E259BB76801E10","is_factory":false,"disco_ver":"1.0","ctrl_protocols":{"name":"Linkie","version":"1.0"},"light_state":{"on_off":0,"dft_on_state":{"mode":"normal","hue":0,"saturation":0,"color_temp":0,"brightness":100}},"is_dimmable":1,"is_color":0,"is_variable_color_temp":0,"preferred_state":[{"index":0,"hue":0,"saturation":0,"color_temp":2700,"brightness":100},{"index":1,"hue":0,"saturation":0,"color_temp":2700,"brightness":75},{"index":2,"hue":0,"saturation":0,"color_temp":2700,"brightness":25},{"index":3,"hue":0,"saturation":0,"color_temp":2700,"brightness":1}],"rssi":-44,"active_mode":"none","heapsize":417572,"err_code":0}},"emeter":{"err_code":-2001,"err_msg":"Module not support"}}
+
+to dev: {"smartlife.iot.common.schedule":{"get_next_action":{}}}
+from dev: {"smartlife.iot.common.schedule":{"get_next_action":{"type":-1,"err_code":0}}}
+
+to dev: {"smartlife.iot.smartbulb.lightingservice":{"transition_light_state":{"ignore_default":0,"mode":"normal","on_off":1,"transition_period":0}}}
+from dev: {"smartlife.iot.smartbulb.lightingservice":{"transition_light_state":{"on_off":1,"mode":"normal","hue":0,"saturation":0,"color_temp":0,"brightness":100,"err_code":0}}}
+
+to dev: {"smartlife.iot.smartbulb.lightingservice":{"get_light_state":{}}}
+from dev: {"smartlife.iot.smartbulb.lightingservice":{"get_light_state":{"on_off":1,"mode":"normal","hue":0,"saturation":0,"color_temp":0,"brightness":100,"err_code":0}}}
+
+to dev (udp): {"smartlife.iot.smartbulb.lightingservice":{"transition_light_state":{"brightness":97,"on_off":1,"transition_period":150}}}
+from dev (udp): {"smartlife.iot.smartbulb.lightingservice":{"transition_light_state":{"on_off":1,"mode":"normal","hue":0,"saturation":0,"color_temp":0,"brightness":97,"err_code":0}}}
+

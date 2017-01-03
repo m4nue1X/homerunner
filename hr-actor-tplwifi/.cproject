@@ -29,30 +29,30 @@
 						<stopOnError>true</stopOnError>
 						<useDefaultCommand>false</useDefaultCommand>
 					</target>
-					<target name="[lib] homerunner" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+					<target name="[lib] hract_tplwifi" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 						<buildCommand>/usr/bin/make</buildCommand>
 						<buildArguments>-j8</buildArguments>
-						<buildTarget>homerunner</buildTarget>
+						<buildTarget>hract_tplwifi</buildTarget>
 						<stopOnError>true</stopOnError>
 						<useDefaultCommand>false</useDefaultCommand>
 					</target>
-					<target name="[lib] homerunner/fast" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+					<target name="[lib] hract_tplwifi/fast" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 						<buildCommand>/usr/bin/make</buildCommand>
 						<buildArguments>-j8</buildArguments>
-						<buildTarget>homerunner/fast</buildTarget>
+						<buildTarget>hract_tplwifi/fast</buildTarget>
 						<stopOnError>true</stopOnError>
 						<useDefaultCommand>false</useDefaultCommand>
 					</target>
-					<target name="Build" path="[Targets]/[lib] homerunner" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+					<target name="Build" path="[Targets]/[lib] hract_tplwifi" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 						<buildCommand>/usr/bin/make</buildCommand>
-						<buildArguments>-C "/home/manuel/Development/Software/homerunner/hr-lib" -j8</buildArguments>
-						<buildTarget>homerunner</buildTarget>
+						<buildArguments>-C "/home/manuel/Development/Software/homerunner/hr-actor-tplwifi" -j8</buildArguments>
+						<buildTarget>hract_tplwifi</buildTarget>
 						<stopOnError>true</stopOnError>
 						<useDefaultCommand>false</useDefaultCommand>
 					</target>
-					<target name="Clean" path="[Targets]/[lib] homerunner" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+					<target name="Clean" path="[Targets]/[lib] hract_tplwifi" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 						<buildCommand>/usr/bin/cmake</buildCommand>
-						<buildArguments>-E chdir "/home/manuel/Development/Software/homerunner/hr-lib" "/usr/bin/cmake" -P "CMakeFiles/homerunner.dir/cmake_clean.cmake"</buildArguments>
+						<buildArguments>-E chdir "/home/manuel/Development/Software/homerunner/hr-actor-tplwifi" "/usr/bin/cmake" -P "CMakeFiles/hract_tplwifi.dir/cmake_clean.cmake"</buildArguments>
 						<buildTarget/>
 						<stopOnError>true</stopOnError>
 						<useDefaultCommand>false</useDefaultCommand>
@@ -73,16 +73,39 @@
 					</target>
 				</buildTargets>
 			</storageModule>
+			<storageModule moduleId="scannerConfiguration">
+				<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile"/>
+				<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile">
+					<buildOutputProvider>
+						<openAction enabled="true" filePath=""/>
+						<parser enabled="true"/>
+					</buildOutputProvider>
+					<scannerInfoProvider id="specsFile">
+						<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="/usr/bin/cc" useDefault="true"/>
+						<parser enabled="true"/>
+					</scannerInfoProvider>
+				</profile>
+				<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile">
+					<buildOutputProvider>
+						<openAction enabled="true" filePath=""/>
+						<parser enabled="true"/>
+					</buildOutputProvider>
+					<scannerInfoProvider id="makefileGenerator">
+						<runAction arguments="-f ${project_name}_scd.mk" command="/usr/bin/make" useDefault="true"/>
+						<parser enabled="true"/>
+					</scannerInfoProvider>
+				</profile>
+			</storageModule>
 		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-		<project id="hr-lib.null.1" name="hr-lib"/>
+		<project id="hr-actor-tplwifi.null.1" name="hr-actor-tplwifi"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.pathentry">
 		<pathentry excluding="**/CMakeFiles/" kind="out" path=""/>
 		<pathentry kind="mac" name="GIT_BRANCH" path="" value="&quot;master&quot;"/>
-		<pathentry kind="mac" name="GIT_COMMIT_HASH" path="" value="&quot;a93bc58&quot;"/>
-		<pathentry kind="mac" name="GIT_AUTHOR_DATE" path="" value="&quot;Sun, 6 Nov 2016 00:47:40 -0700&quot;"/>
+		<pathentry kind="mac" name="GIT_COMMIT_HASH" path="" value="&quot;7d578a2&quot;"/>
+		<pathentry kind="mac" name="GIT_AUTHOR_DATE" path="" value="&quot;Sun, 1 Jan 2017 19:35:27 -0800&quot;"/>
 		<pathentry kind="mac" name="__STDC__" path="" value="1"/>
 		<pathentry kind="mac" name="__STDC_VERSION__" path="" value="201112L"/>
 		<pathentry kind="mac" name="__STDC_UTF_16__" path="" value="1"/>
@@ -378,27 +401,4 @@
 		<pathentry include="/usr/include/c++/6.2.1/backward" kind="inc" path="" system="true"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile"/>
-		<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile">
-			<buildOutputProvider>
-				<openAction enabled="true" filePath=""/>
-				<parser enabled="true"/>
-			</buildOutputProvider>
-			<scannerInfoProvider id="specsFile">
-				<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="/usr/bin/cc" useDefault="true"/>
-				<parser enabled="true"/>
-			</scannerInfoProvider>
-		</profile>
-		<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile">
-			<buildOutputProvider>
-				<openAction enabled="true" filePath=""/>
-				<parser enabled="true"/>
-			</buildOutputProvider>
-			<scannerInfoProvider id="makefileGenerator">
-				<runAction arguments="-f ${project_name}_scd.mk" command="/usr/bin/make" useDefault="true"/>
-				<parser enabled="true"/>
-			</scannerInfoProvider>
-		</profile>
-	</storageModule>
 </cproject>
