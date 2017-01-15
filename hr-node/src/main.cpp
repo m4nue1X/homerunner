@@ -7,7 +7,7 @@
 #include <vnl/Layer.h>
 #include <vnl/ThreadEngine.h>
 #include <vnl/Terminal.h>
-#include "Node.h"
+#include <homerunner/Node.h>
 
 std::string basename(const std::string& str) {
 	char buf[str.size()+1];
@@ -49,11 +49,13 @@ int main(int argc, char** argv) {
 	// start layer, load config
 	vnl::Layer layer("homerunner", dir_name.c_str());
 
+	vnl::ThreadEngine engine;
+
 	if(interactive) {
-		vnl::spawn(new homerunner::Node());
+		vnl::spawn(new homerunner::Node(&engine));
 		vnl::run(new vnl::Terminal());
 	} else {
-		vnl::run(new homerunner::Node());
+		vnl::run(new homerunner::Node(&engine));
 	}
 
 }

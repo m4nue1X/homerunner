@@ -12,6 +12,7 @@
 #include <vnl/Map.h>
 #include <vnl/Object.h>
 #include <homerunner/ModuleFactory.h>
+#include <homerunner/Exception.h>
 
 namespace homerunner {
 

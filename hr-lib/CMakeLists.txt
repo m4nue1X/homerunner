@@ -13,10 +13,17 @@ file(GLOB_RECURSE VNL_SOURCES "./lib/virtual-network-layers-cpp/src/*.cpp")
 add_library(homerunner SHARED
   ${LIBHR_GENERATED_SOURCES}
   ${VNL_SOURCES}
+  src/ModuleManager.cpp
+  src/Node.cpp
+  src/Exception.cpp
 )
 
 target_include_directories(homerunner
   PUBLIC ${LIBHR_INCLUDE_DIRS}
+)
+
+target_link_libraries(homerunner
+  dl
 )
 
 # set visibility default for library

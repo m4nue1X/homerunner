@@ -5,14 +5,17 @@
  *      Author: manuel
  */
 
-#include "Node.h"
+#include <homerunner/Node.h>
 #include <vnl/Array.h>
 #include <vnl/String.h>
 
 namespace homerunner {
 
-Node::Node() : NodeBase("homerunner", "Node") {
-	// nothing to initalize
+Node* Node::instance = nullptr;
+
+Node::Node(vnl::Engine* engine) : NodeBase("homerunner", "Node"), eng(engine) {
+	assert(Node::instance == nullptr);
+	Node::instance = this;
 }
 
 Node::~Node() {

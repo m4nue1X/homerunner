@@ -8,8 +8,6 @@ include("../global.cmake")
 
 add_executable(hrnode
   src/main.cpp
-  src/Node.cpp
-  src/ModuleManager.cpp
 )
 
 target_include_directories(hrnode
@@ -17,7 +15,6 @@ target_include_directories(hrnode
 )
 
 target_link_libraries(hrnode
-  dl
   ${LIBHR_LIBRARIES}
 )
 

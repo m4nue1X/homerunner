@@ -1,0 +1,22 @@
+package homerunner.control;
+
+enum AirConditionMode {
+	ACM_UNKNOWN,
+	ACM_COOL,
+	ACM_FAN,
+	ACM_HEAT
+}
+
+enum AirConditionLevel {
+	ACL_UNKNOWN,
+	ACL_LOW,
+	ACL_MID,
+	ACL_HIGH
+}
+
+class SimpleAirConditionCommand {
+	bool on;
+	AirConditionMode mode;
+	AirConditionLevel level;
+	double temperature;
+}

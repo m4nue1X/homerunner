@@ -15,6 +15,9 @@ class TPLWifi {
 public:
 	TPLWifi();
 	virtual ~TPLWifi();
+
+private:
+
 };
 
 } /* namespace act */

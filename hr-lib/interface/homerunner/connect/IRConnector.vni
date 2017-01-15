@@ -1,0 +1,5 @@
+package homerunner.connect;
+
+object IRConnector {
+	int transmit(Array<int> pulse_timing, int repeat) const;
+}

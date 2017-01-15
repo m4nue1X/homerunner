@@ -1,5 +1,0 @@
-package homerunner.connect;
-
-object IguanaUSBIRConnector {
-	// TODO Iguana USB IR service API
-}
