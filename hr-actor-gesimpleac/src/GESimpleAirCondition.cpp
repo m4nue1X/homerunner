@@ -30,19 +30,43 @@ void GESimpleAirCondition::main() {
 	}
 	irconn_client = Node::requireService<homerunner::connect::IRConnectorClient>(irconn_inst_name);
 
-	set_timeout(5e6, std::bind(&GESimpleAirCondition::timer, this), VNL_TIMER_ONCE);
+	bool testmode = false;
+	vnl::read_config<bool>(my_domain, my_topic, "testmode", testmode);
+
+	if(testmode) {
+		set_timeout(5e6, std::bind(&GESimpleAirCondition::test, this), VNL_TIMER_ONCE);
+	}
 
 	run();
 }
 
-void GESimpleAirCondition::timer() {
-	log(INFO).out << "Freaking out" << vnl::endl;
+void GESimpleAirCondition::test() {
+	log(INFO).out << "Test mode stated" << vnl::endl;
 	homerunner::control::SimpleAirConditionCommand cmd;
 	cmd.on = true;
 	cmd.mode = homerunner::control::AirConditionMode::ACM_HEAT;
 	cmd.temperature = 74;
 	handle(cmd);
-	log(INFO).out << "Fin." << vnl::endl;
+	if(!poll(5e6)) {
+		return;
+	}
+	cmd.on = true;
+	cmd.mode = homerunner::control::AirConditionMode::ACM_COOL;
+	cmd.temperature = 78;
+	handle(cmd);
+	if(!poll(5e6)) {
+		return;
+	}
+	cmd.on = false;
+	handle(cmd);
+	if(!poll(5e6)) {
+		return;
+	}
+	cmd.on = true;
+	cmd.mode = homerunner::control::AirConditionMode::ACM_HEAT;
+	cmd.temperature = 74;
+	handle(cmd);
+	log(INFO).out << "Test finished." << vnl::endl;
 }
 
 void GESimpleAirCondition::handle(const homerunner::control::SimpleAirConditionCommand& cmd) {
@@ -61,16 +85,21 @@ void GESimpleAirCondition::handle(const homerunner::control::SimpleAirConditionC
 			}
 			if(success) {
 				cur_mode = cmd.mode;
+				cur_temp = -1; // after mode set temperature is undefined
 			}
 		}
 
-		if(cmd.temperature != cur_temp) {
-			for(int i=HRACT_GESAC_TEMP_MIN; i<HRACT_GESAC_TEMP_MAX; i++) {
-				transmit((cur_mode == homerunner::control::AirConditionMode::ACM_COOL) ? HRACT_GESAC_IR_TEMP_PLUS : HRACT_GESAC_IR_TEMP_MINUS);
+		if(cmd.temperature != cur_temp && cur_mode != homerunner::control::AirConditionMode::ACM_FAN) {
+			if(cur_temp < 0) { // go to min or max fist
+				for(int i=HRACT_GESAC_TEMP_MIN; i<HRACT_GESAC_TEMP_MAX; i++) {
+					transmit((cur_mode == homerunner::control::AirConditionMode::ACM_COOL) ? HRACT_GESAC_IR_TEMP_PLUS : HRACT_GESAC_IR_TEMP_MINUS);
+				}
+				cur_temp = ((cur_mode == homerunner::control::AirConditionMode::ACM_COOL) ? HRACT_GESAC_TEMP_MAX : HRACT_GESAC_TEMP_MIN);
 			}
-			int n = (cur_mode == homerunner::control::AirConditionMode::ACM_COOL) ? (HRACT_GESAC_TEMP_MAX - cmd.temperature) : (cmd.temperature - HRACT_GESAC_TEMP_MIN);
+			int n = std::abs(cmd.temperature - cur_temp);
+			int ir_cmd = (cmd.temperature > cur_temp) ? HRACT_GESAC_IR_TEMP_PLUS : HRACT_GESAC_IR_TEMP_MINUS;
 			for(int i=0; i<n; i++) {
-				transmit((cur_mode == homerunner::control::AirConditionMode::ACM_COOL) ? HRACT_GESAC_IR_TEMP_MINUS : HRACT_GESAC_IR_TEMP_PLUS);
+				transmit(ir_cmd);
 			}
 			cur_temp = cmd.temperature;
 		}

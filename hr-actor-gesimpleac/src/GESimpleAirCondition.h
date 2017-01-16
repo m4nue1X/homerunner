@@ -35,7 +35,7 @@ public:
 
 	void handle(const homerunner::control::SimpleAirConditionCommand& cmd);
 
-	void timer();
+	void test();
 
 protected:
 	void transmit(int cmd);
