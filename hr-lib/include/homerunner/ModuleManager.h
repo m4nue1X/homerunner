@@ -30,7 +30,7 @@ protected:
 	int loadModule(const vnl::String& mod_name);
 	void close();
 
-	vnl::Object* createInstance(const vnl::String& mod_name, const vnl::String& inst_name);
+	vnl::Object* createInstance(const vnl::String& mod_name, const vnl::String& inst_name, const vnl::String& inst_type);
 
 private:
 	vnl::Map<vnl::String, ModuleContainer> mod_conts;

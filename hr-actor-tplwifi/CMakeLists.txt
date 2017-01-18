@@ -8,6 +8,7 @@ include("../global.cmake")
 
 add_library(hract_tplwifi SHARED
   src/TPLWifi.cpp
+  src/TPLWifiSwitchablePlug.cpp
 )
 
 target_include_directories(hract_tplwifi

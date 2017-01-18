@@ -62,7 +62,7 @@ int ModuleManager::loadModule(const vnl::String& mod_name) {
 	return 0;
 }
 
-vnl::Object* ModuleManager::createInstance(const vnl::String& mod_name, const vnl::String& inst_name) {
+vnl::Object* ModuleManager::createInstance(const vnl::String& mod_name, const vnl::String& inst_name, const vnl::String& inst_type) {
 	ModuleContainer* mc = mod_conts.find(mod_name);
 	if(!mc) {
 		std::cerr << "Unable to find module " << mod_name << std::endl;
@@ -70,7 +70,7 @@ vnl::Object* ModuleManager::createInstance(const vnl::String& mod_name, const vn
 	}
 
 	//std::cout << "Creating instance " << inst_name << std::endl;
-	return mc->factory->createInstance("homerunner", inst_name);
+	return mc->factory->createInstance("homerunner", inst_name, inst_type);
 }
 
 } /* namespace homerunner */

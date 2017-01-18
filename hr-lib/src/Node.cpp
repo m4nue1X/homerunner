@@ -25,17 +25,28 @@ Node::~Node() {
 void Node::main() {
 	// process module config
 	vnl::Array<vnl::String> mod_fnames;
-	mod_fnames = modules.tokenize('\n');
+	vnl::Array<vnl::String> mod_fname_lines = modules.tokenize('\n');
+	for(const vnl::String& mod_fname_line : mod_fname_lines) {
+		if(mod_fname_line.find("//", 0, 2) < 0) {
+			mod_fnames.push_back(mod_fname_line);
+		}
+	}
 
-	vnl::Array<vnl::String> mod_inst_lines = instances.tokenize('\n', false);
-	for(vnl::Array<vnl::String>::const_iterator itlns = mod_inst_lines.cbegin(); itlns != mod_inst_lines.cend(); ++itlns) {
-		vnl::Array<vnl::String> mod_inst_strs = itlns->tokenize(':', true, 2);
-		if(mod_inst_strs.size() >= 2) {
-			vnl::Array<vnl::String> inst_strs = mod_inst_strs[1].tokenize(',');
-			for(vnl::Array<vnl::String>::const_iterator itinst = inst_strs.cbegin(); itinst != inst_strs.cend(); itinst++) {
-				vnl::String inst_name;
-				inst_name << mod_inst_strs[0] << "-" << *itinst;
-				inst_mod_map.insert(inst_name, mod_inst_strs[0]);
+	// get lines
+	vnl::Array<vnl::String> mod_inst_lines = instances.tokenize('\n');
+	for(const vnl::String& mod_inst_line : mod_inst_lines) {
+		if(mod_inst_line.find("//", 0, 2) < 0) {
+			vnl::Array<vnl::String> mod_inst_strs = mod_inst_line.tokenize(':', true, 2);
+			if(mod_inst_strs.size() >= 2) {
+				vnl::Array<vnl::String> mod_strs = mod_inst_strs[0].tokenize('/', true, 2);
+				vnl::String mod_name = mod_strs[0];
+				vnl::String mod_subtype = (mod_strs.size() > 1) ? mod_strs[1] : "";
+				vnl::Array<vnl::String> inst_strs = mod_inst_strs[1].tokenize(',');
+				for(const vnl::String& inst_str : inst_strs) {
+					vnl::String inst_name;
+					inst_name << mod_name << "-" << inst_str;
+					inst_mod_map.insert(inst_name, vnl::pair<vnl::String, vnl::String>(mod_name, mod_subtype));
+				}
 			}
 		}
 	}
@@ -48,9 +59,9 @@ void Node::main() {
 		}
 	}
 
-	for(vnl::Map<vnl::String, vnl::String>::const_iterator it = inst_mod_map.cbegin(); it != inst_mod_map.cend(); it++) {
+	for(vnl::Map<vnl::String, vnl::pair<vnl::String, vnl::String>>::const_iterator it = inst_mod_map.cbegin(); it != inst_mod_map.cend(); it++) {
 		log(INFO).out << "Creating instance " << it->first << vnl::endl;
-		vnl::Object* obj = createInstance(it->second, it->first);
+		vnl::Object* obj = createInstance(it->second.first, it->first, it->second.second);
 		if(obj) {
 			vnl::spawn(obj);
 		} else {

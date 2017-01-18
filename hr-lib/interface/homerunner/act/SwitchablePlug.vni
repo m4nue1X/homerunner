@@ -1,0 +1,7 @@
+package homerunner.act;
+
+import homerunner.control.SwitchCommand;
+
+object SwitchablePlug {
+	void handle(SwitchCommand cmd);
+}

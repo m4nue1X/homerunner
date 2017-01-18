@@ -32,7 +32,7 @@ protected:
 private:
 	vnl::Engine* eng = nullptr;
 
-	vnl::Map<vnl::String, vnl::String> inst_mod_map;
+	vnl::Map<vnl::String, vnl::pair<vnl::String, vnl::String>> inst_mod_map;
 };
 
 template<class T>

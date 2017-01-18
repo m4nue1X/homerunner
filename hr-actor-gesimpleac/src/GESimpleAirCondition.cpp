@@ -158,10 +158,7 @@ void GESimpleAirCondition::transmit(int cmd) {
 extern "C" homerunner::ModuleFactory* homerunner_get_factory() {
 	vnl::String mod_id = "GESimpleAirCondition";
 	vnl::String mod_ver = vnl::String() << GIT_COMMIT_HASH << "@" << GIT_BRANCH << " (" << GIT_AUTHOR_DATE << ")";
-	vnl::Array<vnl::String> req_libs;
-	req_libs.push_back("libiguanaIR.so");
-
-	return new homerunner::ModuleFactoryImpl<homerunner::act::GESimpleAirCondition>(mod_id, mod_ver, req_libs);
+	return new homerunner::ModuleFactoryImpl<homerunner::act::GESimpleAirCondition>(mod_id, mod_ver);
 }
 #pragma GCC visibility pop
 
