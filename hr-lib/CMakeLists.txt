@@ -16,6 +16,7 @@ add_library(homerunner SHARED
   src/ModuleManager.cpp
   src/Node.cpp
   src/Exception.cpp
+  src/Helper.cpp
 )
 
 target_include_directories(homerunner

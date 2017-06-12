@@ -40,10 +40,10 @@ void TPLWifiSwitchablePlug::updateStatus() {
 		log(ERROR).out << err_str << vnl::endl;
 	}
 
-	const rapidjson::Value* rs_val = jsonGetValue({ "system", "get_sysinfo", "relay_state"}, status_doc);
-	if(rs_val != nullptr && rs_val->IsInt()) {
-		log(INFO).out << "Current status of " << dev_name << ": " << rs_val->GetInt() << vnl::endl;
-	}
+	TPLWifiSwitchablePlugStatus status;
+	populateSystemStatus(status_doc, status);
+	log(INFO).out << "Current status of " << dev_name << ": " << status.relay_state << vnl::endl;
+
 }
 
 } /* namespace act */

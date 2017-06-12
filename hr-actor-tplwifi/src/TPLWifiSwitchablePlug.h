@@ -14,6 +14,12 @@
 namespace homerunner {
 namespace act {
 
+class TPLWifiSwitchablePlugStatus : public TPLWifiSystemStatus {
+public:
+	bool relay_state = false;
+	double on_time = 0;
+};
+
 class TPLWifiSwitchablePlug : public SwitchablePlugBase, public TPLWifi {
 public:
 	TPLWifiSwitchablePlug(const vnl::String& domain, const vnl::String& topic);
